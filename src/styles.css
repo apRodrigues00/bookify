@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Junction';
+    src: url('/assets/fonts/Junction-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junction';
+    src: url('/assets/fonts/Junction-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Junction';
+    src: url('/assets/fonts/Junction-light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    margin: 0px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2 {
+    margin: 0px;
+    font-family: 'Junction', sans-serif;
+}

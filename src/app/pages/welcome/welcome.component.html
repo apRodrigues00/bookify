@@ -1,0 +1,11 @@
+<div class="welcome">
+    <h1>Bookify</h1>
+    <p>Sua biblioteca digital, organize e descubra livros como nunca antes!</p>
+    <div class="container">
+        <h2>Boas-vindas à Biblioteca Digital</h2>
+        <input type="email" [(ngModel)]="email" placeholder="Digite seu e-mail">
+        <button class="btn btn-login" (click)="login()">Entrar</button>
+        <p *ngIf="mensagemErro" class="erro">{{ mensagemErro }}</p>
+        <button class="btn btn-register">Criar conta</button>
+    </div>
+</div>
