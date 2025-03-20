@@ -1,0 +1,45 @@
+.navbar {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    color: white;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #1DB954;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+span {
+    font-size: 12px;
+    font-weight: 300;
+    color: #1DB954;
+}
