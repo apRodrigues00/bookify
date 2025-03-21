@@ -1,0 +1,22 @@
+<div class="books">
+
+    <div class="header">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="main">
+        <h1 class="title">Nossos Livros</h1>
+        <div class="book-grid">
+            <div *ngFor="let book of books" class="book-card">
+                <img [src]="book.capa_url" alt="Capa do Livro" class="book-image" />
+                <div class="book-info">
+                    <h3>{{ book.titulo }}</h3>
+                    <p id="book-author">Por: {{ book.autor_nome }}</p>
+                    <p id="book-year">Ano: {{ book.ano_publicacao | date: 'yyyy' }}</p>
+                    <button class="book-button">Adicionar a lista</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
