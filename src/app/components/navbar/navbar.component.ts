@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/users/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,10 @@ export class NavbarComponent {
     email: '',
   };
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     const user = this.userService.getUser();
@@ -25,5 +29,10 @@ export class NavbarComponent {
         email: user.email,
       };
     }
+  }
+
+  exit() {
+    this.userService.clearUser();
+    this.router.navigate(['/']);
   }
 }

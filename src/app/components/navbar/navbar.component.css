@@ -9,6 +9,14 @@
     color: white;
 }
 
+.user-text img {
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
 h1 {
     font-size: 40px;
     font-weight: bold;
@@ -17,7 +25,7 @@ h1 {
 
 .user-info {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 10px;
 }
 
