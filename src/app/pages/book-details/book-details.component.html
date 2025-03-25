@@ -1,0 +1,50 @@
+<div class="book-page">
+
+    <div class="header">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="main">
+
+        <button class="btn-gray" (click)="return()">
+            <svg class="arrow-left" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path class="arrow-left"
+                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+                    fill="#FFF" />
+            </svg>
+        </button>
+
+        <div class="book" *ngIf="!isLoadingBooks">
+            <h1>{{ book.titulo }}</h1>
+            <img [src]="book.capa_url" alt="Capa do livro">
+            <p>Por: {{ book.autor_nome }}</p>
+            <p>Em: {{ book.ano_publicacao | date: 'yyyy' }}</p>
+        </div>
+
+        <div class="lists" *ngIf="!isLoadingLists">
+            <div class="new-list">
+                <h1>Suas listas</h1>
+                <button (click)="showPopup()" class="btn btn-green">Criar lista</button>
+            </div>
+            <div class="list" *ngFor="let list of lists">
+                <p>{{list.nome_lista}}</p>
+                <div class="right">
+                    <span *ngIf="list.quantidade_livros > 0">{{ list.quantidade_livros }} {{ list.quantidade_livros ===
+                        1? 'Livro' : 'Livros' }}</span>
+                    <span *ngIf="list.quantidade_livros === 0">Sem livros</span>
+                    <button *ngIf="!list.contem_livro" class="btn btn-plus" (click)="addBook(list)">+</button>
+                    <button *ngIf="list.contem_livro" class="btn btn-trash" (click)="removeBook(list)">
+                        <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="#FFFFFF"
+                                d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <app-new-list [userId]="user.id" *ngIf="isVisiblePopup" (close)="closePopup($event)"></app-new-list>
+
+</div>

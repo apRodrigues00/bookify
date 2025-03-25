@@ -1,0 +1,170 @@
+.book-page {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.header {
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.btn-gray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 50%;
+    background-color: #282828;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.arrow-left {
+    fill: #FFF;
+    transition: fill 0.3s ease;
+}
+
+.btn-gray:hover {
+    background-color: #1DB954;
+    color: white;
+}
+
+.btn-gray:hover .arrow-left {
+    fill: #282828;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.book img {
+    padding: 20px 0px;
+    width: 30%;
+    max-width: 400px;
+    min-width: 200px;
+    border-radius: 4px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #282828;
+}
+
+.lists {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    cursor: pointer;
+    width: fit-content;
+    background-color: #1DB954;
+    border: 2px solid transparent;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.btn-green {
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn-green:hover {
+    border: 2px solid #1DB954;
+    background-color: #282828;
+    color: #1DB954;
+}
+
+.btn-plus {
+    border-radius: 50%;
+    background-color: #1DB954;
+    border: 2px solid transparent;
+    color: white;
+    padding: 0 7px;
+
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.btn-plus:hover {
+    border: 2px solid #1DB954;
+    background-color: #282828;
+    color: #1DB954;
+}
+
+.btn-trash {
+    border: 2px solid transparent;
+    color: white;
+    padding: 6px 6px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    transition: background-color 0.3s ease, fill 0.3s ease, border 0.3s ease;
+}
+
+.btn-trash:hover {
+    border: 2px solid red;
+    background-color: #282828;
+}
+
+.btn-trash:hover path{
+    fill: red;
+}
+
+.new-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.list {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    background-color: #282828;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.list span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1DB954;
+}
+
+.right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
