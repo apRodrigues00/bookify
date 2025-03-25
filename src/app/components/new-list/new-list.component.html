@@ -1,0 +1,8 @@
+<div class="popup" (click)="closePopup(false)">
+    <div class="content-popup" (click)="stopPropagation($event)">
+        <h3>Escolha o nome para sua lista</h3>
+        <input type="text" [(ngModel)]="listName" placeholder="Minha lista de livros">
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+        <button (click)="createList()">Criar lista</button>
+    </div>
+</div>
