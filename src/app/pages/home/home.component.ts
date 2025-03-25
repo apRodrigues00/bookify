@@ -19,4 +19,7 @@ export class HomeComponent {
     this.router.navigate(['/livros']);
   }
 
+  showLists() {
+    this.router.navigate(['/listas']);
+  }
 }
