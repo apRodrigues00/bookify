@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-interface Livro {
+export interface Livro {
   id_livro: string;
   titulo: string;
   capa_url: string;
@@ -24,5 +24,10 @@ export class BooksService {
   getBooks(): Observable<Livro[]> {
     const apiUrl = environment.APIURL + 'books';
     return this.http.get<Livro[]>(apiUrl);
+  }
+
+  getBookById(id: string): Observable<Livro> {
+    const apiUrl = environment.APIURL + 'books/' + id;
+    return this.http.get<Livro>(apiUrl);
   }
 }
