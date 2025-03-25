@@ -11,6 +11,39 @@
     width: 100%;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px;
+}
+
+.btn-gray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 6px;
+    border-radius: 50%;
+    background-color: #282828;
+    cursor: pointer;
+    width: fit-content;
+    border: 2px solid #1DB954;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.arrow-left {
+    fill: #FFF;
+    transition: fill 0.3s ease;
+}
+
+.btn-gray:hover {
+    background-color: #1DB954;
+    color: white;
+}
+
+.btn-gray:hover .arrow-left {
+    fill: #282828;
+}
+
 .title {
     text-align: center;
     font-size: 2.5rem;
@@ -21,7 +54,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    padding: 30px;
+    padding: 30px 0px;
 }
 
 .book-card {

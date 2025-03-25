@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
-import { BooksService } from '../../services/books/books.service';
+import { BooksService, Livro } from '../../services/books/books.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-books',
@@ -14,7 +16,11 @@ export class BooksComponent {
   
   books: any[] = []; 
 
-  constructor(private booksService: BooksService) { }
+  constructor(
+    private booksService: BooksService,
+    private router: Router,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
     this.booksService.getBooks().subscribe({
@@ -25,5 +31,13 @@ export class BooksComponent {
         console.error('Erro ao buscar os livros:', err);
       }
     });
+  }
+
+  return() {
+    this.location.back();
+  }
+
+  showBook(book: Livro) {
+    this.router.navigate(['/livros', book.id_livro])
   }
 }
